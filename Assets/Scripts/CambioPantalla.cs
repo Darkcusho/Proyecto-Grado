@@ -18,6 +18,10 @@ public class CambioPantalla : MonoBehaviour
         
     }
 
+    public void MenuPrincipal()
+    {
+        SceneManager.LoadScene("Principal");
+    }
     public void MenuCreacion()
     {
         SceneManager.LoadScene("MenuCreacionn");
@@ -31,5 +35,15 @@ public class CambioPantalla : MonoBehaviour
     public void MenuCargar()
     {
         SceneManager.LoadScene("MenuCargar");
+    }
+
+    public void MenuPausa()
+    {
+        SceneManager.LoadScene("MenuPausa");
+    }
+
+    public void Nivel1()
+    {
+        SceneManager.LoadScene("Nivel1");
     }
 }
