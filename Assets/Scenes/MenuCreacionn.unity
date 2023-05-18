@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 54222643}
   - component: {fileID: 54222642}
   m_Layer: 0
-  m_Name: Dropdown
+  m_Name: selRaza
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 90327290}
   - component: {fileID: 90327291}
   m_Layer: 0
-  m_Name: Toggle
+  m_Name: sexMas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3110,7 +3110,7 @@ GameObject:
   - component: {fileID: 1317756012}
   - component: {fileID: 1317756013}
   m_Layer: 0
-  m_Name: Toggle
+  m_Name: sexFem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3230,8 +3230,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.547, y: -3.332}
-  m_SizeDelta: {x: 978.733, y: 529.78}
+  m_AnchoredPosition: {x: 0.0033293, y: -0.00039864}
+  m_SizeDelta: {x: 1018.8, y: 489.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1334764284
 MonoBehaviour:
@@ -3697,7 +3697,7 @@ GameObject:
   - component: {fileID: 1393414364}
   - component: {fileID: 1393414363}
   m_Layer: 0
-  m_Name: Image
+  m_Name: prevPj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4874,7 +4874,7 @@ GameObject:
   - component: {fileID: 2003541139}
   - component: {fileID: 2003541138}
   m_Layer: 0
-  m_Name: Dropdown
+  m_Name: selClase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5265,7 +5265,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1417041358}
         m_TargetAssemblyTypeName: CambioPantalla, Assembly-CSharp
-        m_MethodName: MenuPausa
+        m_MethodName: Nivel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
