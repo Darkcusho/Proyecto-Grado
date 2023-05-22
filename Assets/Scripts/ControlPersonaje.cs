@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class ControlPersonaje : MonoBehaviour
 {
-    public float Velocidad = 30.0f;
+    public float velocidadMovimiento = 30.0f;
+    public float velocidadRotacion = 200.0f;
+    private Animator anim;
+    public float x, y;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float movHorizontal = Input.GetAxis("Horizontal");
-        float movVertical = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
 
-        Vector3 movimiento = new Vector3(movHorizontal,0.0f,movVertical);
-        transform.position += movimiento * Velocidad * Time.deltaTime;
+        transform.Rotate(0, x * Time.deltaTime * velocidadMovimiento, 0);
+        transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
+
+        anim.SetFloat("VelX", x);
+        anim.SetFloat("VelY", y);
     }
-    
 }
