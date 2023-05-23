@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class ControlPersonaje : MonoBehaviour
 {
-    public float velocidadMovimiento = 30.0f;
-    public float velocidadRotacion = 200.0f;
+    public float velocidadMovimiento = 5.0f;
+    public float velocidadRotacion = 250.0f;
     private Animator anim;
+    SceneManager sm;
     public float x, y;
     // Start is called before the first frame update
     void Start()
@@ -20,10 +23,18 @@ public class ControlPersonaje : MonoBehaviour
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
-        transform.Rotate(0, x * Time.deltaTime * velocidadMovimiento, 0);
+        transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
         transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
 
         anim.SetFloat("VelX", x);
         anim.SetFloat("VelY", y);
+    }
+
+    void Nivel2(Collider collider)
+    {
+        if(collider.tag == "Nivel2")
+        {
+            SceneManager.LoadScene("Nivel2");
+        }
     }
 }

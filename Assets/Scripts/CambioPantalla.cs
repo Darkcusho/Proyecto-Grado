@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CambioPantalla : MonoBehaviour
 {
     SceneManager sceneManager;
+    public Text cajaEdad,cajaNombre;
+
+    public int Edad;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +28,7 @@ public class CambioPantalla : MonoBehaviour
     }
     public void MenuCreacion()
     {
-        SceneManager.LoadScene("MenuCreacionn");
+        SceneManager.LoadScene("MenuCreacionn");     
     }
 
     public void MenuOpciones()
@@ -44,6 +48,17 @@ public class CambioPantalla : MonoBehaviour
 
     public void Nivel1()
     {
-        SceneManager.LoadScene("Nivel1");
+            SceneManager.LoadScene("Nivel1");   
+
+        /*        Edad = int.Parse(cajaEdad.text);
+        if(Edad >= 18)
+        {
+            SceneManager.LoadScene("Nivel1");   
+        }
+        else
+        {
+            Debug.Log("Eres muy pequeño, andate a jugar pepa pig ctm!!");
+        }*/
     }
+
 }

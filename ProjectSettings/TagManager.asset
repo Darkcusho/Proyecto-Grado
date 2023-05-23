@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Objetivo
+  - Nivel2
   layers:
   - Default
   - TransparentFX
