@@ -8,7 +8,7 @@ public class ControlPersonaje : MonoBehaviour
 {
     public float velocidadMovimiento = 5.0f;
     public float velocidadRotacion = 250.0f;
-    private Animator anim;
+    public Animator anim;
     SceneManager sm;
     public float x, y;
     // Start is called before the first frame update
