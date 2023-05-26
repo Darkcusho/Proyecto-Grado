@@ -11,13 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuCreacionn.unity
     guid: 8ae798c7cc2472046a2ea0490a528a66
-  - enabled: 1
-    path: Assets/Scenes/MenuPausa.unity
-    guid: b3533da12d9dd214aa810636cecf91f0
-  - enabled: 1
-    path: Assets/Scenes/MenuOpciones.unity
-    guid: 48488dc778f9afa42a8561ec1d66aebf
-  - enabled: 1
-    path: Assets/Scenes/Nivel1.unity
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Nivel1(Antiguo).unity
     guid: cb290db5bca805d47b13f6358cdb406c
+  - enabled: 1
+    path: Assets/Scenes/Nivel01.unity
+    guid: 3222d6d84080f854d9c1a22f4d1f57bf
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

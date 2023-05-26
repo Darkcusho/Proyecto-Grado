@@ -46,9 +46,9 @@ public class CambioPantalla : MonoBehaviour
         SceneManager.LoadScene("MenuPausa");
     }
 
-    public void Nivel1()
+    public void Nivel01()
     {
-            SceneManager.LoadScene("Nivel1");   
+            SceneManager.LoadScene("Nivel01");   
 
         /*        Edad = int.Parse(cajaEdad.text);
         if(Edad >= 18)
@@ -60,5 +60,13 @@ public class CambioPantalla : MonoBehaviour
             Debug.Log("Eres muy pequeño, andate a jugar pepa pig ctm!!");
         }*/
     }
-
+    
+    void Nivel2(Collider collider)
+    {
+        if(collider.tag == "Nivel2")
+        {
+            Debug.Log("Pasaste!!♥");
+            //SceneManager.LoadScene("Nivel2");
+        }
+    }
 }

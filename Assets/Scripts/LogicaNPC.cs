@@ -7,26 +7,30 @@ using TMPro;
 public class LogicaNPC : MonoBehaviour
 {
     public GameObject simboloMision;
-    private ControlPersonaje jugador;
-    public GameObject panel1NPC;
-    public GameObject panel1NPC2;
-    public GameObject panel1NPCMision;
+    public ControlPersonaje jugador;
+    public GameObject panelNPC;
+    public GameObject panelNPC2;
+    public GameObject panelNPCMision;
     public TextMeshProUGUI textoMision;
-    private bool jugadorCerca;
-    private bool aceptarMision;
+    public bool jugadorCerca;
+    public bool aceptarMision;
     public GameObject[] objetivos;
+    public int numDeObjetivos;
+    public GameObject botonDeMision;
 
     void Start()
     {
-        textoMision.text = GetTextoMision(objetivos.Length);
+        numDeObjetivos = objetivos.Length;
+        textoMision.text = "Busca el libro y el Léxico perdidos"+
+                        "\n Restantes: "+ numDeObjetivos;
         jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<ControlPersonaje>();
         simboloMision.SetActive(true);
-        panel1NPC.SetActive(false);
+        panelNPC.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && aceptarMision)
+        if (Input.GetKeyDown(KeyCode.E) && aceptarMision == false)
         {
             Vector3 posicionJugador = new Vector3(transform.position.x, jugador.gameObject.transform.position.y, transform.position.z);
             jugador.gameObject.transform.LookAt(posicionJugador);
@@ -34,60 +38,53 @@ public class LogicaNPC : MonoBehaviour
             jugador.anim.SetFloat("VelX", 0);
             jugador.anim.SetFloat("VelY", 0);
             jugador.enabled = false;
-            panel1NPC.SetActive(false);
-            panel1NPC2.SetActive(true);
+            panelNPC.SetActive(false);
+            panelNPC2.SetActive(true);
         }
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider coll)
     {
-        if (other.tag == "Player")
+        if (coll.tag == "Player")
         {
             jugadorCerca = true;
-            if (!aceptarMision)
+            if (aceptarMision == false)
             {
-                panel1NPC.SetActive(true);
+                panelNPC.SetActive(true);
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider coll)
     {
-        if (other.tag == "Player")
+        if (coll.tag == "Player")
         {
             jugadorCerca = false;
 
-            panel1NPC.SetActive(false);
-            panel1NPC2.SetActive(false);
+            panelNPC.SetActive(false);
+            panelNPC2.SetActive(false);
         }
     }
 
-    private void No()
+    public void No()
     {
         jugador.enabled = true;
-
-        panel1NPC2.SetActive(false);
-
-        panel1NPC.SetActive(true);
+        panelNPC2.SetActive(false);
+        panelNPC.SetActive(true);
     }
 
     public void Si()
     {
         jugador.enabled = true;
         aceptarMision = true;
-        foreach (GameObject objetivo in objetivos)
+        for(int i = 0 ; i > objetivos.Length ; i++)
         {
-            objetivo.SetActive(true);   
+            objetivos[i].SetActive(true);   
         }
         jugadorCerca = false;
         simboloMision.SetActive(false);
-        panel1NPC.SetActive(false);
-        panel1NPC2.SetActive(false);
-        panel1NPCMision.SetActive(true);
-    }
-
-    private string GetTextoMision(int numObjetivos)
-    {
-        return $"Encuentra el brazalete, la llave y el libro del saber\nItems faltantes: {numObjetivos}";
+        panelNPC.SetActive(false);
+        panelNPC2.SetActive(false);
+        panelNPCMision.SetActive(true);
     }
 }

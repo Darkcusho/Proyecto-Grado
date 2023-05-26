@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ControlPersonaje : MonoBehaviour
 {
-    public float velocidadMovimiento = 5.0f;
+    public float velocidadMovimiento = 10.0f;
     public float velocidadRotacion = 250.0f;
     public Animator anim;
     SceneManager sm;
@@ -28,13 +28,5 @@ public class ControlPersonaje : MonoBehaviour
 
         anim.SetFloat("VelX", x);
         anim.SetFloat("VelY", y);
-    }
-
-    void Nivel2(Collider collider)
-    {
-        if(collider.tag == "Nivel2")
-        {
-            SceneManager.LoadScene("Nivel2");
-        }
     }
 }
