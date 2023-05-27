@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Objetivo
   - Nivel2
+  - Nivel3
+  - Salida
   layers:
   - Default
   - TransparentFX

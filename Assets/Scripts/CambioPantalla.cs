@@ -9,7 +9,7 @@ public class CambioPantalla : MonoBehaviour
     SceneManager sceneManager;
     public Text cajaEdad,cajaNombre;
 
-    public int Edad;
+    public int Edad = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,20 +48,27 @@ public class CambioPantalla : MonoBehaviour
 
     public void Nivel01()
     {
-            SceneManager.LoadScene("Nivel01");   
-
-        /*        Edad = int.Parse(cajaEdad.text);
-        if(Edad >= 18)
+        //SceneManager.LoadScene("Nivel01");   
+        if(cajaNombre.text != ""
+        && cajaEdad.text != "")
         {
-            SceneManager.LoadScene("Nivel1");   
+            Edad = int.Parse(cajaEdad.text);
+            if(Edad >= 15)
+            {
+                SceneManager.LoadScene("Nivel01");   
+            }
+            else
+            {
+                Debug.Log("Eres muy pequeño, andate a jugar pepa pig ctm!!");
+            }
         }
         else
         {
-            Debug.Log("Eres muy pequeño, andate a jugar pepa pig ctm!!");
-        }*/
+            Debug.Log("Rellena los campos solicitados, Porfavor!");
+        }
     }
     
-    void Nivel2(Collider collider)
+    void Nivel02(Collider collider)
     {
         if(collider.tag == "Nivel2")
         {
