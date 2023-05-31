@@ -8,14 +8,12 @@ public class CambioPantalla : MonoBehaviour
 {
     SceneManager sceneManager;
     public Text cajaEdad,cajaNombre;
-
     public int Edad = 0;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -30,22 +28,18 @@ public class CambioPantalla : MonoBehaviour
     {
         SceneManager.LoadScene("MenuCreacionn");     
     }
-
     public void MenuOpciones()
     {
         SceneManager.LoadScene("MenuOpciones");
     }
-
     public void MenuCargar()
     {
         SceneManager.LoadScene("MenuCargar");
     }
-
     public void MenuPausa()
     {
         SceneManager.LoadScene("MenuPausa");
     }
-
     public void Nivel01()
     {
         //SceneManager.LoadScene("Nivel01");   
@@ -66,14 +60,21 @@ public class CambioPantalla : MonoBehaviour
         {
             Debug.Log("Rellena los campos solicitados, Porfavor!");
         }
-    }
-    
-    void Nivel02(Collider collider)
+    }    
+    public void Nivel02(Collider coll)
     {
-        if(collider.tag == "Nivel2")
+        if(coll.tag == "Nivel2")
         {
             Debug.Log("Pasaste!!♥");
             //SceneManager.LoadScene("Nivel2");
         }
+    }
+    public void Salir()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }

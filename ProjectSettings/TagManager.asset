@@ -8,6 +8,7 @@ TagManager:
   - Nivel2
   - Nivel3
   - Salida
+  - PergaminoFinal
   layers:
   - Default
   - TransparentFX

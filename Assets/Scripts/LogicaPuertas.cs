@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LogicaPuertas : MonoBehaviour
 {
+    public ControlPersonaje personaje;
     public bool jugadorCerca;
-    public bool aceptarMision;
-    public GameObject panelNPC;
-
+    public bool MisionCumplida;
+    public GameObject panelInteraccion;
+    public Text cajaRespuesta;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -18,29 +21,55 @@ public class LogicaPuertas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F)
-        && GameObject.FindWithTag("Nivel2"))
+                //Paso del piso 1 al 2
+        if(Input.GetKey(KeyCode.F)
+        && GameObject.FindWithTag("Nivel2")
+        && cajaRespuesta == null)
         {
             SceneManager.LoadScene("Nivel02");
         }
-        if(Input.GetKeyDown(KeyCode.F)
-        && GameObject.FindWithTag("Nivel3"))
+        
+                // Paso del piso 2 al 3 
+        if(GameObject.FindWithTag("Nivel3") // Esto hace lo de la caja de respuestas 
+        && cajaRespuesta.text == "El hombre es enano"
+        || cajaRespuesta.text == "Es enano")
         {
             SceneManager.LoadScene("Nivel03");
         }
-        if(Input.GetKeyDown(KeyCode.F)
-        && GameObject.FindWithTag("Salida"))
+        
+                // Paso de piso 3 a Salida
+        if(Input.GetKey(KeyCode.F)
+        && GameObject.FindWithTag("Salida")
+        && cajaRespuesta == null)
         {
             SceneManager.LoadScene("Completado");
         }
     }
 
-    void OnTriggerEnter(Collider coll)
+    public void OnTriggerEnter(Collider coll)
     {
         if (coll.tag == "Player")
         {
             jugadorCerca = true;
-            panelNPC.SetActive(true);
+            Debug.Log("jugador cerca");
+            personaje.enabled = false;
+            panelInteraccion.SetActive(true);
         }
     }
+
+    void OnTriggerExit(Collider coll)
+    {
+        if(coll.tag == "Player")
+        {
+            jugadorCerca = false;
+            personaje.enabled = true;
+            panelInteraccion.SetActive(false);
+        }
+    }
+
+    public void NoRespuesta()
+    {
+        personaje.enabled = true;       
+    }
+
 }

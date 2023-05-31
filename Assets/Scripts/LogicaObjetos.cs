@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class LogicaObjetos : MonoBehaviour
 {
+    public ControlPersonaje Personaje;
+    public GameObject PanelLectura,PanelInteraccion;
     public LogicaNPC NPC;
+    public bool jugadorCerca;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,4 +35,32 @@ public class LogicaObjetos : MonoBehaviour
             transform.parent.gameObject.SetActive(false);
         }
     }
+
+    void OnTriggerStay(Collider coll)
+    {
+        if(coll.tag == "Player")
+        {
+            jugadorCerca = true;
+            PanelInteraccion.SetActive(true);
+            if(Input.GetKey(KeyCode.R))
+            {
+                Personaje.enabled = false;
+                PanelLectura.SetActive(true);
+                PanelInteraccion.SetActive(false);
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider coll)
+    {
+        if(coll.tag == "Player")
+        {
+            jugadorCerca = false;
+
+            PanelInteraccion.SetActive(false);
+            PanelLectura.SetActive(false);
+        }
+    }
+
+
 }
