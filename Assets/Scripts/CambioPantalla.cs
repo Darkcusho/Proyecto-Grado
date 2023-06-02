@@ -50,7 +50,7 @@ public class CambioPantalla : MonoBehaviour
             Edad = int.Parse(cajaEdad.text);
             if(Edad >= 15)
             {
-                SceneManager.LoadScene("Nivel01");   
+                SceneManager.LoadScene("Nivel01"); 
             }
             else
             {

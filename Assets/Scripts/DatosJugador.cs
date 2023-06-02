@@ -5,23 +5,14 @@ using UnityEngine.UI;
 
 public class DatosJugador : MonoBehaviour
 {   
+    public InputField cajaNombre,cajaEdad;
     public string nombre,edad; 
-    private CambioPantalla cajas;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Vector3 posicion;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
-    }
-
-    public void TomarDatos()
-    {
-        nombre = cajas.cajaNombre.text;
-        edad = (cajas.cajaEdad.text).ToString();
+        nombre = cajaNombre.text;
+        edad = cajaEdad.text.ToString();
+        posicion = transform.position;
     }
 }

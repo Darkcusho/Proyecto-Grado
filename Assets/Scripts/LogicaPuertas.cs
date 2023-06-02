@@ -11,6 +11,7 @@ public class LogicaPuertas : MonoBehaviour
     public bool MisionCumplida;
     public GameObject panelInteraccion;
     public Text cajaRespuesta;
+    
   
     // Start is called before the first frame update
     void Start()
