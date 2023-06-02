@@ -9,6 +9,11 @@ TagManager:
   - Nivel3
   - Salida
   - PergaminoFinal
+  - EspadaMisteriosa
+  - Letura
+  - Pistola
+  - Reloj
+  - DagaEnorme
   layers:
   - Default
   - TransparentFX

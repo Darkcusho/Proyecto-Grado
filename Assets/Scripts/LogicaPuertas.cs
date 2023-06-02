@@ -21,26 +21,9 @@ public class LogicaPuertas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-                //Paso del piso 1 al 2
+                // Paso de piso 3 a la Salida
         if(Input.GetKey(KeyCode.F)
-        && GameObject.FindWithTag("Nivel2")
-        && cajaRespuesta == null)
-        {
-            SceneManager.LoadScene("Nivel02");
-        }
-        
-                // Paso del piso 2 al 3 
-        if(GameObject.FindWithTag("Nivel3") // Esto hace lo de la caja de respuestas 
-        && cajaRespuesta.text == "El hombre es enano"
-        || cajaRespuesta.text == "Es enano")
-        {
-            SceneManager.LoadScene("Nivel03");
-        }
-        
-                // Paso de piso 3 a Salida
-        if(Input.GetKey(KeyCode.F)
-        && GameObject.FindWithTag("Salida")
-        && cajaRespuesta == null)
+        && GameObject.FindWithTag("Salida"))
         {
             SceneManager.LoadScene("Completado");
         }
@@ -56,7 +39,23 @@ public class LogicaPuertas : MonoBehaviour
             panelInteraccion.SetActive(true);
         }
     }
-
+    public void OnTriggerStay(Collider coll)
+    {
+                //Paso del piso 1 al 2
+        if(Input.GetKey(KeyCode.F)
+        && GameObject.FindWithTag("Nivel2"))
+        {
+            SceneManager.LoadScene("Nivel02");
+        }
+        
+                // Paso del piso 2 al 3 
+        if(GameObject.FindWithTag("Nivel3") // Esto toma como condicion la caja de respuestas 
+        && cajaRespuesta.text == "El hombre es enano"
+        || cajaRespuesta.text == "Es enano")
+        {
+            SceneManager.LoadScene("Nivel03");
+        }
+    }
     void OnTriggerExit(Collider coll)
     {
         if(coll.tag == "Player")

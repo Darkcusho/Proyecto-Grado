@@ -1367,8 +1367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccc873db3e64fd48a4c3c7188f601b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cajaEdad: {fileID: 1837109583}
-  cajaNombre: {fileID: 1985092313}
+  cajaEdad: {fileID: 146725781}
+  cajaNombre: {fileID: 62644834}
   Edad: 0
 --- !u!4 &1708923617
 Transform:

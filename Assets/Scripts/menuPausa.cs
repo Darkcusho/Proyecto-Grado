@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class menuPausa : MonoBehaviour
 {
     private bool MenuActivo;
+    public GameObject panelPausa;
+    public ControlPersonaje pj;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +18,14 @@ public class menuPausa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene("MenuPausa");
+            panelPausa.SetActive(true);
         }
+    }
+
+    public void Salir()
+    {
+        SceneManager.LoadScene("Principal");
     }
 }

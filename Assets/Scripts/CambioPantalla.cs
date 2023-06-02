@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class CambioPantalla : MonoBehaviour
 {
     SceneManager sceneManager;
-    public Text cajaEdad,cajaNombre;
+    public InputField cajaEdad,cajaNombre;
     public int Edad = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +42,7 @@ public class CambioPantalla : MonoBehaviour
         SceneManager.LoadScene("MenuPausa");
     }
     public void Nivel01()
-    {
+    {    
         //SceneManager.LoadScene("Nivel01");   
         if(cajaNombre.text != ""
         && cajaEdad.text != "")
@@ -61,14 +62,6 @@ public class CambioPantalla : MonoBehaviour
             Debug.Log("Rellena los campos solicitados, Porfavor!");
         }
     }    
-    public void Nivel02(Collider coll)
-    {
-        if(coll.tag == "Nivel2")
-        {
-            Debug.Log("Pasaste!!♥");
-            //SceneManager.LoadScene("Nivel2");
-        }
-    }
     public void Salir()
     {
         #if UNITY_EDITOR
