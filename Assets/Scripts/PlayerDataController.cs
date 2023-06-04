@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Mono.Data.Sqlite;
+using System.Data;
 
 
 public class PlayerDataController : MonoBehaviour
@@ -13,7 +14,7 @@ public class PlayerDataController : MonoBehaviour
     private void Start()
     {
         // Establecer la cadena de conexión a la base de datos SQLite
-        connectionString = "URI=file:" + Application.persistentDataPath + "/playerdata.db";
+        connectionString = "URI=file:playerdata.db";
 
         // Crear la tabla si no existe
         CrearTablaJugadores();
@@ -26,7 +27,7 @@ public class PlayerDataController : MonoBehaviour
             connection.Open();
 
             // Crear una sentencia SQL para crear la tabla si no existe
-            string createTableQuery = "CREATE TABLE IF NOT EXISTS TablaJugador (Nombre TEXT, Edad INTEGER, Posicion TEXT)";
+            string createTableQuery = "CREATE TABLE IF NOT EXISTS TablaJugador ( id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT Nombre TEXT, Edad INTEGER, Posicion TEXT)";
 
             // Crear un comando SQL y ejecutar la consulta
             using (var command = new SqliteCommand(createTableQuery, connection))
@@ -41,13 +42,9 @@ public class PlayerDataController : MonoBehaviour
     public void TomarDatosJugador()
     {
         //Obtener los datos actuales del jugador
-        /*
-        Nombre = Datos.nombre;
-        Edad = Datos.edad;
-        posJugador = Datos.posicion;
-        */
+        
         // Guardamos los datos en la base de datos
-        GuardarDatosJugador(Datos.nombre,Datos.edad,Datos.posicion);
+        GuardarDatosJugador(Nombre,Edad,posJugador);
     }
     public void GuardarDatosJugador(string Nombre, string Edad, Vector3 posJugador)
     {
@@ -90,7 +87,7 @@ public class PlayerDataController : MonoBehaviour
             {
                 using(var reader = command.ExecuteReader())
                 {
-                    if(reader.Read())
+                    while(reader.Read())
                     {
                         Nombre = reader.GetString(0);
                         Edad = reader.GetString(1);
