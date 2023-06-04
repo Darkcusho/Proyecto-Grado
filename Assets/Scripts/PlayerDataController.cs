@@ -27,7 +27,7 @@ public class PlayerDataController : MonoBehaviour
             connection.Open();
 
             // Crear una sentencia SQL para crear la tabla si no existe
-            string createTableQuery = "CREATE TABLE IF NOT EXISTS TablaJugador ( id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT Nombre TEXT, Edad INTEGER, Posicion TEXT)";
+            string createTableQuery = "CREATE TABLE IF NOT EXISTS TablaPartidas (Nombre TEXT NOT NULL PRIMARY KEY, Edad INTEGER, Posicion TEXT)";
 
             // Crear un comando SQL y ejecutar la consulta
             using (var command = new SqliteCommand(createTableQuery, connection))

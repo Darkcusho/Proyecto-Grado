@@ -35,7 +35,6 @@ public class LogicaPuertas : MonoBehaviour
         if (coll.tag == "Player")
         {
             jugadorCerca = true;
-            Debug.Log("jugador cerca");
             personaje.enabled = false;
             panelInteraccion.SetActive(true);
         }

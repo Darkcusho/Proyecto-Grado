@@ -53,7 +53,7 @@ public class CambioPantalla : MonoBehaviour
                 Debug.Log(cajaNombre.text);
                 Debug.Log(cajaEdad.text);
 
-                //SceneManager.LoadScene("Nivel01"); 
+                SceneManager.LoadScene("Nivel01"); 
             }
             else
             {
