@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextosObjetos : MonoBehaviour
-{   
-    public GameObject panelEspada,panelLibro,panelDaga;
+public class TextoPistola : MonoBehaviour
+{
+    public GameObject panelPistola;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,15 +14,14 @@ public class TextosObjetos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void OnTriggerEnter(Collider coll)
     {
-        if(coll.tag == "Player"
-        && GameObject.FindWithTag("EspadaMisteriosa"))
+        if(coll.tag == "Player")
         {
-            panelEspada.SetActive(true);
+            panelPistola.SetActive(true);
         }
     }
 
@@ -30,7 +29,7 @@ public class TextosObjetos : MonoBehaviour
     {
         if(coll.tag == "Player")
         {
-            panelEspada.SetActive(false);
+            panelPistola.SetActive(false);
         }
     }
 }

@@ -6,20 +6,17 @@ using UnityEngine.UI;
 public class DatosJugador : MonoBehaviour
 {   
     public InputField cajaNombre,cajaEdad;
-    public string nombre,edad; 
-    public Vector3 posicion;
-    public object DatosJ;
+    public static string nombre;
+    public static int edad; 
+    public static Vector3 posicion;
     
     public void CapturarDatos()
     {
         nombre = cajaNombre.text;
-        edad = cajaEdad.text;
+        edad = int.Parse(cajaEdad.text);
         posicion = transform.position;
-        DatosJ = new 
-                    {
-                        Nombre = nombre,
-                        Edad = edad,
-                        Posicion = posicion
-                    };
     }    
+    public void Awake(){
+        DontDestroyOnLoad(this);
+    }
 }

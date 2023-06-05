@@ -18,10 +18,6 @@ public class InteraccionesVarias : MonoBehaviour
         if(coll.tag == "Letura")
         {
             panelTexto.SetActive(true);
-        }
-        if(coll.tag == "DagaEnorme")
-        {
-            panelTexto.SetActive(true);
         }  
     }
 }

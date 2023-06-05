@@ -18,6 +18,8 @@ public class LogicaNPC : MonoBehaviour
     public int numDeObjetivos;
     public GameObject botonDeMision;
 
+    public GameObject Libro,Lexico;
+
     void Start()
     {
         numDeObjetivos = objetivos.Length;
@@ -86,5 +88,7 @@ public class LogicaNPC : MonoBehaviour
         panelNPC.SetActive(false);
         panelNPC2.SetActive(false);
         panelNPCMision.SetActive(true);
+        Libro.SetActive(true);
+        Lexico.SetActive(true);
     }
 }

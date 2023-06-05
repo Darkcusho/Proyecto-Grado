@@ -40,7 +40,7 @@ public class menuPausa : MonoBehaviour
         pausado = true;
         Debug.Log("Juego Pausado");// Pa asegurarse.
     }
-    public void Reanudar()
+    void Reanudar()
     {
         panelPausa.SetActive(false);
         Time.timeScale = 1f; //Reanuda la escala de tiempo

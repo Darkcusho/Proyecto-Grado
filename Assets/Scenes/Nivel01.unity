@@ -7122,7 +7122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3855516a946084592f2bf70c014c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personaje: {fileID: 640320924}
   jugadorCerca: 0
   MisionCumplida: 0
   panelInteraccion: {fileID: 1241452995}
@@ -9849,55 +9848,6 @@ CapsuleCollider:
   m_Height: 2.1378305
   m_Direction: 1
   m_Center: {x: 0.00000011920929, y: -0.0000032688201, z: 0.63180524}
---- !u!1 &777251226
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 777251228}
-  - component: {fileID: 777251229}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &777251228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777251226}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.250294, y: 545.21716, z: 343.14484}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &777251229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777251226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a15a2b3a058ef74b826e49c87938f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cajaNombre: {fileID: 0}
-  cajaEdad: {fileID: 0}
-  nombre: 
-  edad: 
-  posicion: {x: 0, y: 0, z: 0}
 --- !u!1001 &782232846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14714,10 +14664,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eb283b1f5420845944bc3b4b5713d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Datos: {fileID: 777251229}
+  Datos: {fileID: 0}
   Nombre: 
-  Edad: 
   Pos: 
+  Edad: 0
   posJugador: {x: 0, y: 0, z: 0}
 --- !u!4 &1070137577
 Transform:
@@ -16967,7 +16917,7 @@ CapsuleCollider:
   m_Height: 2.781536
   m_Direction: 1
   m_Center: {x: 0.00000009934107, y: 0.59938246, z: 0.0000007947286}
---- !u!114 &1196600838
+--- !u!114 &1196600836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16976,12 +16926,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1196432205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57424bb3355df574aaa9da6087dc2698, type: 3}
+  m_Script: {fileID: 11500000, guid: d09e29396ff8a624a87caa2dd38623e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panelEspada: {fileID: 1467148449}
-  panelLibro: {fileID: 0}
-  panelDaga: {fileID: 0}
 --- !u!1 &1205665178
 GameObject:
   m_ObjectHideFlags: 0
@@ -19382,6 +19330,10 @@ PrefabInstance:
     - target: {fileID: 4433255413829591616, guid: ec003cfbd0cdfe740943af98bc42ebe1, type: 3}
       propertyPath: m_Name
       value: Libro
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433255413829591616, guid: ec003cfbd0cdfe740943af98bc42ebe1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec003cfbd0cdfe740943af98bc42ebe1, type: 3}
@@ -26971,7 +26923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1757693494
 Transform:
   m_ObjectHideFlags: 0
@@ -27892,7 +27844,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1802127211
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29125,7 +29077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.6055, y: 42.667}
+  m_AnchoredPosition: {x: 4.60553, y: 42.666992}
   m_SizeDelta: {x: -592.1757, y: -240.8447}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1917809779
@@ -29388,6 +29340,8 @@ MonoBehaviour:
   - {fileID: 536885522}
   numDeObjetivos: 0
   botonDeMision: {fileID: 19355132}
+  Libro: {fileID: 1655363466}
+  Lexico: {fileID: 1757693493}
 --- !u!1001 &1954145420
 PrefabInstance:
   m_ObjectHideFlags: 0

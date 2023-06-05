@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TextoEspada : MonoBehaviour
+{   
+    public GameObject panelEspada;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void OnTriggerEnter(Collider coll)
+    {
+        if(coll.tag == "Player"
+        && GameObject.FindWithTag("EspadaMisteriosa"))
+        {
+            panelEspada.SetActive(true);
+        }
+    }
+
+    public void OnTriggerExit(Collider coll)
+    {
+        if(coll.tag == "Player")
+        {
+            panelEspada.SetActive(false);
+        }
+    }
+}

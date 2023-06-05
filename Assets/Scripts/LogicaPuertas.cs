@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class LogicaPuertas : MonoBehaviour
 {
-    public ControlPersonaje personaje;
     public bool jugadorCerca;
     public bool MisionCumplida;
     public GameObject panelInteraccion;
@@ -35,7 +34,6 @@ public class LogicaPuertas : MonoBehaviour
         if (coll.tag == "Player")
         {
             jugadorCerca = true;
-            personaje.enabled = false;
             panelInteraccion.SetActive(true);
         }
     }
@@ -47,28 +45,13 @@ public class LogicaPuertas : MonoBehaviour
         {
             SceneManager.LoadScene("Nivel02");
         }
-        
-                // Paso del piso 2 al 3 
-        if(GameObject.FindWithTag("Nivel3") // Esto toma como condicion la caja de respuestas 
-        && cajaRespuesta.text == "El hombre es enano"
-        || cajaRespuesta.text == "Es enano")
-        {
-            SceneManager.LoadScene("Nivel03");
-        }
     }
     void OnTriggerExit(Collider coll)
     {
         if(coll.tag == "Player")
         {
             jugadorCerca = false;
-            personaje.enabled = true;
             panelInteraccion.SetActive(false);
         }
     }
-
-    public void NoRespuesta()
-    {
-        personaje.enabled = true;       
-    }
-
 }
