@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sonidos : MonoBehaviour
+public class SonidoPasos : MonoBehaviour
 {   
-    public AudioSource pasos,libro,puerta;   
+    public AudioSource pasos;   
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +42,6 @@ public class Sonidos : MonoBehaviour
             puerta.Play();
         }
         */
-
-    }
-
-    public void OnTriggerStay(Collider coll)
-    {
 
     }
 }

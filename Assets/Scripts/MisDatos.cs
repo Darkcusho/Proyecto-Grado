@@ -17,12 +17,12 @@ public class MisDatos
         position = DatosJugador.posicion.ToString();
         name = DatosJugador.nombre;
         age = DatosJugador.edad;
-         using (var connection = new SqliteConnection(connectionString))
+        using (var connection = new SqliteConnection(connectionString))
         {
             connection.Open();
 
             // Crear una sentencia SQL para crear la tabla si no existe
-            string createTableQuery = "CREATE TABLE IF NOT EXISTS TablaPartidas (Id integer PRIMARY KEY autoincrement, Nombre TEXT NOT NULL, Edad INTEGER, Posicion TEXT)";
+            string createTableQuery = "CREATE TABLE IF NOT EXISTS TablaPartidas (Id integer PRIMARY KEY autoincrement, Nombre TEXT, Edad INTEGER, Posicion TEXT)";
 
             // Crear un comando SQL y ejecutar la consulta
             using (var command = new SqliteCommand(createTableQuery, connection))
